@@ -1,0 +1,14 @@
+// open any youtube video on PC. Skips last 30-ish seconds of credits (eg: new girl / brooklyn 99 official channel videos)
+v = document.getElementsByTagName('video')[0]
+b = document.getElementsByClassName('ytp-next-button')[0]; 
+var i = 0, loop_length = 50, loop_speed = 100;
+var skip = 30
+function loop(){
+    i+= 1; v.play(); 
+    /* Here is your code. Balabala...*/
+    if (Math.floor(v.duration)===Math.floor(v.currentTime+skip)){
+      b.click();
+    }
+}
+
+var handler = setInterval(loop, loop_speed);
